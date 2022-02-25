@@ -13,24 +13,16 @@ class pair  {
     }  
 }
 
-class GFG {
+class Main {
 	public static void main(String[] args) throws IOException
 	{
-	        BufferedReader br =
-            new BufferedReader(new InputStreamReader(System.in));
-        int t =
-            Integer.parseInt(br.readLine().trim()); // Inputting the testcases
-        while(t-->0)
-        {
-            long n = Long.parseLong(br.readLine().trim());
-            long a[] = new long[(int)(n)];
-            // long getAnswer[] = new long[(int)(n)];
-            String inputLine[] = br.readLine().trim().split(" ");
-            for (int i = 0; i < n; i++) {
-                a[i] = Long.parseLong(inputLine[i]);
+            Scanner sc=new Scanner(System.in);
+            long N=sc.nextLong();
+            long[] a=new long[(int)N];
+            for(int i=0;i<a.length;i++){
+                a[i]=sc.nextLong();
             }
-            long k = Long.parseLong(br.readLine().trim());
-            
+            long k=sc.nextLong();
             Solution obj = new Solution();
             pair ans = obj.indexes(a, k);
             if (ans.first == -1 && ans.second == -1)
@@ -38,26 +30,9 @@ class GFG {
             else
                 System.out.println(ans.first+" "+ans.second);
             
-        }
+        
 	}
 }
-
-// } Driver Code Ends
-
-
-//User function Template for Java
-
-/*
-class pair  {  
-    long first, second;  
-    public pair(long first, long second)  
-    {  
-        this.first = first;  
-        this.second = second;  
-    }  
-}
-*/
-
 class Solution {
     
     public pair indexes(long v[], long x)
